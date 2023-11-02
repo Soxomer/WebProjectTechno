@@ -7,10 +7,13 @@ import {isUUID} from "class-validator";
 @Injectable()
 export class MessagesService {
     messages: Message[] = [{sender: "omar", content: 'random texte'}];
-    clients = {};
+    clientToUser = {};
 
-    create(createMessageDto: CreateMessageDto) {
-        const message = {...createMessageDto};
+    create(createMessageDto: CreateMessageDto, clientId: string) {
+        const message = {
+            name: this.clientToUser[clientId],
+            test: createMessageDto.content
+        }
         return this.messages.push(createMessageDto);
     }
 
@@ -20,11 +23,11 @@ export class MessagesService {
 
     join(name: string,
          clientId: string) {
-        this.clients[clientId] = name;
-    return Object.values(this.clients);
+        this.clientToUser[clientId] = name;
+    return Object.values(this.clientToUser);
     }
     getClientName(clientId: string) {
-        return this.clients[clientId];
+        return this.clientToUser[clientId];
     }
     typing() {
         // todo
