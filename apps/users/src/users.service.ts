@@ -16,7 +16,7 @@ export class UsersService {
     user.name = createUserDto.name;
     user.email = createUserDto.email;
     user.password = createUserDto.password;
-    return this.users.push(createUserDto as User);
+    return this.users.push(user);
   }
 
   findAll() {
