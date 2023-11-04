@@ -3,9 +3,26 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 
+const mockUsers: User[] = [
+  {
+    id: 1,
+    name: 'jhon',
+    email: 'jhon.doe@gmail.com',
+    password: 'string',
+    role: Role.ADMIN,
+  },
+  {
+    id: 2,
+    name: 'dylan',
+    email: 'dylan.doe@gmail.com',
+    password: 'string',
+    role: Role.CLIENT,
+  },
+];
+
 @Injectable()
 export class UsersService {
-  private readonly users: User[] = [];
+  private readonly users: User[] = mockUsers;
 
   create(createUserDto: CreateUserDto) {
     if (this.existByEmail(createUserDto.email)) {
@@ -31,6 +48,7 @@ export class UsersService {
   existByEmail(email: string) {
     return this.users.some((user) => user.email === email);
   }
+
   update(id: number, updateUserDto: UpdateUserDto) {
     const user = this.findOne(id);
     const index = this.users.indexOf(user);
