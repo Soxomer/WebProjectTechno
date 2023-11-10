@@ -1,14 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import {Test, TestingModule} from '@nestjs/testing';
+import {INestApplication} from '@nestjs/common';
 import * as request from 'supertest';
-import { ChatModule } from './../src/chat.module';
+import {MessagesModule} from './../src/messages.module';
 
-describe('ChatController (e2e)', () => {
+describe('MessagesController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [ChatModule],
+      imports: [MessagesModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
@@ -17,8 +17,8 @@ describe('ChatController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+    .get('/')
+    .expect(200)
+    .expect('Hello World!');
   });
 });

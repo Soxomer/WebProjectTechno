@@ -44,13 +44,13 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "chat": {
+    "messages": {
       "type": "application",
-      "root": "apps/chat",
+      "root": "apps/messages",
       "entryFile": "main",
-      "sourceRoot": "apps/chat/src",
+      "sourceRoot": "apps/messages/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/chat/tsconfig.app.json"
+        "tsConfigPath": "apps/messages/tsconfig.app.json"
       }
     },
     "users": {
