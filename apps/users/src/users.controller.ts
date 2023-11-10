@@ -7,6 +7,9 @@ import {
   Param,
   Delete,
   HttpException,
+  NotFoundException,
+  ParseIntPipe,
+  BadRequestException,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -18,11 +21,7 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    try {
-      return this.usersService.create(createUserDto);
-    } catch (error) {
-      throw new HttpException(error.message, 400);
-    }
+    return this.usersService.create(createUserDto);
   }
 
   @Get()
@@ -31,13 +30,10 @@ export class UsersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    const usr = this.usersService.findOne(+id);
-    console.log(usr);
-    if (!usr) {
-      throw new HttpException('User not found', 404);
-    }
-    return usr;
+  findOne(@Param('id', new ParseIntPipe()) id: number) {
+    const user = this.usersService.findOne(id);
+    if (!user) return new NotFoundException();
+    return user;
   }
 
   @Patch(':id')

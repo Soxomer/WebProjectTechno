@@ -1,4 +1,4 @@
 export class Message {
-    sender : string;
-    content: string;
+  sender: string;
+  content: string;
 }
