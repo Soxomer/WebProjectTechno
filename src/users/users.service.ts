@@ -16,6 +16,24 @@ export class UsersService {
       password: "MySuperP@ssw0rd!",
       role: Role.ADMIN,
     },
+    {
+      id: 2,
+      name: "jean",
+      firstName: "valjean",
+      age: 23,
+      email: "jean@gmail.com",
+      password: "MySuperjeanP@ssw0rd!",
+      role: Role.CLIENT,
+    },
+    {
+      id: 3,
+      name: "Marie",
+      firstName: "Antoinette",
+      age: 36,
+      email: "monarchie@gmail.com",
+      password: "MySuperMarieP@ssw0rd!",
+      role: Role.CLIENT,
+    },
   ];
 
   create(createUserDto: CreateUserDto): User[] {
