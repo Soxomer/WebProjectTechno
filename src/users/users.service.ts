@@ -1,8 +1,8 @@
-import { ConflictException, Injectable, Logger } from "@nestjs/common";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { UpdateUserDto } from "./dto/update-user.dto";
-import { User } from "./entities/user.entity";
-import { Role } from "./entities/role.enum";
+import {ConflictException, Injectable, Logger} from "@nestjs/common";
+import {CreateUserDto} from "./dto/create-user.dto";
+import {UpdateUserDto} from "./dto/update-user.dto";
+import {User} from "./entities/user.entity";
+import {Role} from "./entities/role.enum";
 
 @Injectable()
 export class UsersService {

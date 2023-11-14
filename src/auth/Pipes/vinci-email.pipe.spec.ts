@@ -1,4 +1,4 @@
-import { VinciEmailPipe } from "./vinci-email.pipe.service";
+import {VinciEmailPipe} from "./vinci-email.pipe.service";
 
 describe("VinciEmailPipePipe", () => {
   it("should be defined", () => {

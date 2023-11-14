@@ -1,11 +1,5 @@
-import {
-  ArgumentMetadata,
-  BadRequestException,
-  Injectable,
-  Logger,
-  PipeTransform,
-} from "@nestjs/common";
-import { User } from "../../users/entities/user.entity";
+import {ArgumentMetadata, BadRequestException, Injectable, PipeTransform,} from "@nestjs/common";
+import {User} from "../../users/entities/user.entity";
 
 @Injectable()
 export class VinciEmailPipe implements PipeTransform {

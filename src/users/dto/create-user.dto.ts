@@ -1,14 +1,4 @@
-import {
-  IsEmail,
-  IsNotEmpty,
-  IsNumber,
-  IsString,
-  IsStrongPassword,
-  ValidateIf,
-} from "class-validator";
-import { UsePipes } from "@nestjs/common";
-import { VinciEmailPipe } from "../../auth/Pipes/vinci-email.pipe.service";
-import { Exclude } from "class-transformer";
+import {IsNotEmpty, IsNumber, IsString, IsStrongPassword,} from "class-validator";
 
 export class CreateUserDto {
   @IsString()

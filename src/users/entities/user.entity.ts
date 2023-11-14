@@ -1,5 +1,4 @@
-import { Role } from "./role.enum";
-import { Exclude } from "class-transformer";
+import {Role} from "./role.enum";
 
 export class User {
   id: number;

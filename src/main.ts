@@ -1,9 +1,8 @@
-import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { ValidationPipe } from "@nestjs/common";
-import { VinciEmailPipe } from "./auth/Pipes/vinci-email.pipe.service";
-import { ConfigModule } from "@nestjs/config";
+import {NestFactory} from "@nestjs/core";
+import {AppModule} from "./app.module";
+import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
+import {ValidationPipe} from "@nestjs/common";
+import {ConfigModule} from "@nestjs/config";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

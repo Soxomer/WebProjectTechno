@@ -1,18 +1,8 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  Query,
-  UsePipes,
-} from "@nestjs/common";
-import { UsersService } from "./users.service";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { UpdateUserDto } from "./dto/update-user.dto";
-import { VinciEmailPipe } from "../auth/Pipes/vinci-email.pipe.service";
+import {Body, Controller, Delete, Get, Param, Patch, Post, Query, UsePipes,} from "@nestjs/common";
+import {UsersService} from "./users.service";
+import {CreateUserDto} from "./dto/create-user.dto";
+import {UpdateUserDto} from "./dto/update-user.dto";
+import {VinciEmailPipe} from "../auth/Pipes/vinci-email.pipe.service";
 
 @Controller("users")
 export class UsersController {
