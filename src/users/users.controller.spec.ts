@@ -7,9 +7,10 @@ describe("UsersController", () => {
   let controller: UsersController;
 
   const mockUserService = {
-    findAll: jest.fn(),
-    findAllByAge: jest.fn(),
-    findOne: jest.fn(),
+    findAll: jest.fn().mockReturnValue("function findAll as been called."),
+    // eslint-disable-next-line prettier/prettier
+    findAllByAge: jest.fn().mockReturnValue("function indAllByAge as been called."),
+    findOne: jest.fn().mockReturnValue("function findAll as been called."),
   };
 
   beforeEach(async () => {
@@ -29,6 +30,8 @@ describe("UsersController", () => {
   });
 
   describe("get /", () => {
-    expect(controller.findAll()).toHaveBeenCalled();
+    it("should call the findAll function", () => {
+      expect(controller.findAll()).toBe("function findAll as been called.");
+    });
   });
 });
